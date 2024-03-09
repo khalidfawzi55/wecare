@@ -9,7 +9,7 @@ const toolsSchema=new Schema({
        
     tradeMark:{
         type:String,
-        unique:true,
+        
        
     },
     Available:{
