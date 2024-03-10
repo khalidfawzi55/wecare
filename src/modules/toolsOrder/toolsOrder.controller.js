@@ -6,7 +6,7 @@ import _ from "lodash"
 import axios from "axios"
 import bcrypt from 'bcrypt'
 import otpGenerator from 'otp-generator'
-
+import { addOne, deleteOne, getAllDocumnts, updateOne } from "../handler/factors.js"
 
 
 
@@ -34,7 +34,9 @@ const getAllToolOrders=catchError(async(req,res)=>{
     
 })
 
-
+const updateToolOrder=updateOne(toolsOrderModel);
+const deleteToolOrder=deleteOne(toolsOrderModel);
+ 
 
 
 const protectedRoutes=catchError(async(req,res,next)=>{
@@ -46,5 +48,7 @@ const protectedRoutes=catchError(async(req,res,next)=>{
 export{
     orderTool,
     getAllToolOrders,
-    protectedRoutes
+    protectedRoutes,
+    updateToolOrder,
+    deleteToolOrder
 }
