@@ -8,7 +8,7 @@ import subCategoryRouter from "./modules/subCategory/subCategory.routes.js"
 import nurseOrderRouter from "./modules/nurseOrder/nurseOrder.routes.js"
 import toolsRouter from "./modules/tools/tools.routes.js"
 import toolRouter from "./modules/toolsOrder/toolsOrder.routes.js"
-
+import donationRouter from "./modules/donations/donation.routes.js"
 
 
 export function bootstrap(app){
@@ -21,5 +21,6 @@ export function bootstrap(app){
     // app.use('/api/v1/nurses/order',nurseOrderRouter)
     app.use('/api/v1/tools',toolsRouter)
      app.use('/api/v1/tools/order',toolRouter)
-    app.get('/',(req,res)=>res.send('hello world'))
+      app.use('/api/v1/tools/donation',donationRouter)
+    app.get('/',(req,res)=>res.send('we care'))
 }
